@@ -1,0 +1,26 @@
+* Componente de software
+
+a) Componentes de software possuem diferentes definições. Johannes Sametinger (1997) considera componentes como artefatos autocontidos, identificáveis e que executam funções específicas. Esta definição é intencionalmente genérica, o que acaba por sugerir que qualquer artefato do ciclo de vida de um software pode ser um componente. 
+
+Já outros autores, como Szyperski (1998), definem componente como "uma unidade de composição com interfaces contratualmente especificadas e apenas dependências de contexto". Assim como Sametinger, Szyperski define que um componente deve poder ser utilizado de maneira independente. No entanto, o fato de um componente possuir um "conjunto de interfaces contratualmente especificadas" indica que um componente deve prover funcionalidades que possam ser acessadas por diversos outros componentes. Além disso, esse fator restringe componentes para apenas componentes de código. No trabalho de Spagnoli e Becker (2003), a definição de componente como componente de código é a utilizada.
+
+b) No DBC, o componente tem como papel executar alguma funcionalidade específica no projeto. Ele é o elo de ligação entre a especificação do modelo de componentes e o framework de componentes, e é normalmente desenvolvido com seu uso futuro em algum framework em mente.
+
+
+* Modelo de componentes
+
+a) O trabalho de Spagnoli e Becker (2003) cita que um componente pode ser visto de uma perspectiva relacionada a implementação, ou a perspectiva de uma abstração arquitetural. A primeira perspectiva se refere a um componente como elemento que é utilizado para compor sistemas e subsistemas maiores. A segunda perspectiva se refere a um componente como um artefato que descreve regras de projeto, as quais são um modelo de interação e coordenação para todos os componentes. 
+
+Esta perspectiva corresponde ao modelo de componente, que é um elemento da arquitetura do software responsável por descrever regras e padrões a serem seguidas pelos seus componentes, assim como a função de cada um e como eles interagem entre si.
+
+O modelo de componentes, segundo Bachmann et al. (2002), busca definir uma composição uniforme de cada componente, de maneira que cada um saiba o que é o outro provẽ, atributos de qualidade, onde cada componente tem um tipo específico e um padrão de interação, o que torna possível a garantia de que componentes feitos por terceiros terão as qualidades necessárias, e formas de instalação de cada componente ou aplicação, para que cada componente possa ser instalado em diferentes ambientes.
+
+b) O papel do modelo de componentes no DBC é identificar quais são os tipos de componentes e quais as formas de interação por eles aceitas. Pela figura 1 de Spagnoli e Becker (2003), o modelo de componentes também identifica as formas pelas quais um componente pode ser utilizado. Segundo os autores, os componentes que vão executar funcionalidades já definidas devem pertencer a um dos tipos definidos no modelo de componentes, utilizando as formas de interação descritas e os serviços disponibilizados.
+
+* Framework de componentes
+
+a) O framework de componentes, de acordo com Spagnoli e Becker (2003), é a base (ou infraestrutura) na qual as convenções e padrões definidas no modelo de componentes serão utilizadas e executadas. Bachmann et al. (2002) faz uma analogia de framework de componentes com sistemas operacionais. Da mesma maneira que os sistemas operacionais são responsáveis por gerenciar os recursos e controlar a comunicação entre diferentes processos, os frameworks são os responsáveis por gerenciar os recursos compartilhados de cada componente de código, além de prover mecanismos para a comunicação entre eles.
+
+b) O papel do framework é prestar suporte a comunicação entre componentes. A figura 1 de Spagnoli e Becker (2003) ilustra esta comunicação sendo realizada por meio de serviços de coordenação. Pela figura, também é possível identificar que o framework implementa/utiliza as definições do modelo de componentes para descrever como um componente se liga ao framework.
+
+
