@@ -2,9 +2,9 @@
 
 a) Componentes de software possuem diferentes definições. Johannes Sametinger (1997) considera componentes como artefatos autocontidos, identificáveis e que executam funções específicas. Esta definição é intencionalmente genérica, o que acaba por sugerir que qualquer artefato do ciclo de vida de um software pode ser um componente. 
 
-Já outros autores, como Allan Brown (1997), definem componente como "um conjunto independente de serviços reutilizáveis". Assim como Sametinger, Brown define que um componente não deve depender de outros componentes. No entanto, o fato de um componente ser um  conjunto de "serviços reutilizáveis" indica que um componente deve prover funcionalidades que possam ser acessadas por diversos outros componentes. Além disso, esse fator restringe componentes para apenas componentes de código. No trabalho de Spagnoli e Becker (2003), a definição de componente como componente de código é a utilizada.
+Já outros autores, como Szyperski (1998), definem componente como "uma unidade de composição com interfaces contratualmente especificadas e apenas dependências de contexto". Assim como Sametinger, Szyperski define que um componente deve poder ser utilizado de maneira independente. No entanto, o fato de um componente possuir um "conjunto de interfaces contratualmente especificadas" indica que um componente deve prover funcionalidades que possam ser acessadas por diversos outros componentes. Além disso, esse fator restringe componentes para apenas componentes de código. No trabalho de Spagnoli e Becker (2003), a definição de componente como componente de código é a utilizada.
 
-b) No DBC, o componente tem como papel executar alguma funcionalidade específica no projeto, sendo o elo de ligação entre a especificação do modelo de componentes e o framework de componentes.
+b) No DBC, o componente tem como papel executar alguma funcionalidade específica no projeto. Ele é o elo de ligação entre a especificação do modelo de componentes e o framework de componentes, e é normalmente desenvolvido com seu uso futuro em algum framework em mente.
 
 
 * Modelo de componentes
