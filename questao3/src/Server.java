@@ -19,24 +19,23 @@ public class Server extends UnicastRemoteObject implements IServer{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void sendBroadcast(String message) {
 		for(IClient c : connectedClients.values()) {
 			try{
-				c.show(message);
+				System.out.println("Mensagem teste.");
+		
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	@Override
 	public void sendDirect(String id, String message) {
 		for(String key : connectedClients.keySet()) {
 			if(id.equals(key)) {
 				IClient c = connectedClients.get(key);
 				try{
-					c.show(message);
+					System.out.println("Mensagem teste.");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,7 +45,6 @@ public class Server extends UnicastRemoteObject implements IServer{
 		
 	}
 
-	@Override
 	public void connect(IClient c, String id) {
 		connectedClients.put(id, c);	
 	}

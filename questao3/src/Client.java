@@ -12,12 +12,12 @@ public class Client extends UnicastRemoteObject implements IClient{
 		this.id = id;
 	}
 
-	@Override
-	public void show(String message) {
-		System.out.println(
-				"Mensagem recebida. ID Recebedor: " 
-				+ id + " mensage: " + message);
-	}
+	//@Override
+	//public void show(String message) {
+		//System.out.println(
+			//	"Mensagem recebida. ID Recebedor: " 
+				//+ id + " mensage: " + message);
+	//}
 	
 	public static void main(String[] args) {
 		try {
