@@ -1,14 +1,7 @@
-import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class Server extends UnicastRemoteObject implements IServer{
 
@@ -16,13 +9,15 @@ public class Server extends UnicastRemoteObject implements IServer{
 	
 	protected Server() throws RemoteException {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public void sendBroadcast(String message) {
-		for(IClient c : connectedClients.values()) {
+	public void sendBroadcast(String idSender, String message) {
+		for(String key : connectedClients.keySet()) {
 			try{
-				System.out.println("Mensagem teste.");
+				if(!key.equals(idSender)) {
+					IClient c = connectedClients.get(key);
+					c.show(message);					
+				}
 		
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -30,19 +25,21 @@ public class Server extends UnicastRemoteObject implements IServer{
 		}
 	}
 
-	public void sendDirect(String id, String message) {
+	public void sendDirect(String idReceiver, String message) {
 		for(String key : connectedClients.keySet()) {
-			if(id.equals(key)) {
+			if(idReceiver.equals(key)) {
 				IClient c = connectedClients.get(key);
+				
 				try{
-					System.out.println("Mensagem teste.");
+					c.show(message);
+					break;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 				break;
 			}
-		}
-		
+		}	
 	}
 
 	public void connect(IClient c, String id) {

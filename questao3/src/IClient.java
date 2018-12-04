@@ -1,6 +1,6 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface IClient  {
-	void show(String message);
+public interface IClient extends Remote {
+	void show(String message) throws RemoteException;
 }

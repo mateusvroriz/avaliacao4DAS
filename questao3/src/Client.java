@@ -1,6 +1,11 @@
+import java.io.Serializable;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class Client extends UnicastRemoteObject implements IClient{
 
@@ -12,30 +17,37 @@ public class Client extends UnicastRemoteObject implements IClient{
 		this.id = id;
 	}
 
-	//@Override
-	//public void show(String message) {
-		//System.out.println(
-			//	"Mensagem recebida. ID Recebedor: " 
-				//+ id + " mensage: " + message);
-	//}
+	@Override
+	public void show(String message) {
+		System.out.println(
+				"Mensagem recebida. ID Recebedor: " 
+				+ id + " mensage: " + message);
+	}
 	
 	public static void main(String[] args) {
 		try {
+			
+			String id = "";
+			String message = "";
+			
+			if(args.length == 2) {
+				id = args[0];
+				message = args[1];
+			} else {
+				System.out.println("Informe o ID do cliente que está enviando a mesange e a mensage a ser enviada "
+						+ "como argumento da linha de comando!");
+				System.exit(0);
+			}
+			
 			IServer s = (IServer) Naming.lookup("server");
 			
-			Client c1 = new Client("ID1");
-			Client c2 = new Client("ID2");
-			Client c3 = new Client("ID3");
-			Client c4 = new Client("ID4");
+			IClient c = new Client(id);
 			
-			s.connect(c1, "ID1");
-			s.connect(c2, "ID2");
-			s.connect(c3, "ID3");
-			s.connect(c4, "ID4");
+			s.connect(c, id);
+
+			s.sendBroadcast(id, message);
 			
-			s.sendBroadcast("Mensagem Um");
-			
-			s.sendDirect("ID3", "Mensagem Dois");
+			s.sendDirect("ID3", message);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
