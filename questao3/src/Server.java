@@ -42,8 +42,15 @@ public class Server extends UnicastRemoteObject implements IServer{
 		}	
 	}
 
-	public void connect(IClient c, String id) {
-		connectedClients.put(id, c);	
+	public boolean connect(IClient c, String id) {
+		for(String key : connectedClients.keySet()) {
+			if(id.equals(key)) {
+				return false;
+			}
+		}
+		
+		connectedClients.put(id, c);
+		return true;
 	}
 	
 	public static void main(String[] args) {
