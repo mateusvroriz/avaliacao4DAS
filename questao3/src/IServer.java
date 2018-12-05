@@ -18,7 +18,7 @@ https://docs.oracle.com/javase/1.5.0/docs/guide/rmi/spec/rmi-arch2.html
 https://docs.oracle.com/javase/1.5.0/docs/guide/rmi/relnotes.html
 
  * Apesar disso, acreditamos que a interface IServer atende alguma das características do stub, 
- * como o fato de ser utilizada, na máquina local, para realizar as chamadas a um objeto remoto. 
+ * como o fato de ser utilizada, na máquina local, para realizar as chamadas a um objeto remoto(Server). 
  * Por isso, consideramos que IServer corresponde ao stub na arquitetura RMI".
 */
 public interface IServer extends Remote {
