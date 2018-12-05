@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 /*
  * "Stubs são responsáveis por representarem, localmente, o objeto remoto. 
- * É no stub que o a máquina local faz a chamada para o objeto remoto, 
+ * É no stub que a máquina local faz a chamada para o objeto remoto, 
  * e é o stub o responsável por transferir essa chamada para o servidor. 
  * Além disso, o stub implementa as mesmas interfaces que o objeto remoto 
  * (neste projeto, foi utilizado uma único arquivo de interface, por questões de conveniência).

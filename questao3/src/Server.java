@@ -18,7 +18,7 @@ https://docs.oracle.com/javase/1.5.0/docs/guide/rmi/spec/rmi-arch2.html
 https://paginas.fe.up.pt/~pfs/aulas/sd2009/at/78rmi_handout.pdf
 
   * Portanto, acreditamos que a classe Server, representa o skeleton, já que ela:
-  * 1. Recebe os parâmetros enviados pelo stub da máquina local e realiza o processo
+  * 1. Recebe os parâmetros enviados pelo stub(IServer) da máquina local e realiza o processo
   * de desserialização (unmarshalling) destes parâmetros.
   * 2. Executa a implementação real dos método remotos. 
   * 3. Realiza o processo de serialização (marshalling) das respostas.

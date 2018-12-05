@@ -14,7 +14,7 @@ import java.rmi.RemoteException;
  * percebidas pelo servidor.
  * 
  * A interface é IClient é aquela na qual o servidor faz a chamada
- * para o objeto remoto Client. Por este fator, ela também é considerada
+ * para o objeto remoto Client(skeleton). Por este fator, ela também é considerada
  * como um stub, atendendo aos mesmos critérios utilizados para a classificação
  * da interface IServer.
  */

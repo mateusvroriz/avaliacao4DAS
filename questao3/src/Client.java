@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
  * A classe é Cliente corresponde a possíveis clientes que
  * farão uso do servidor de troca de mensagens. Ela foi
  * implementada como objeto remoto pelos motivos explicados nos comentários
- * da interface IClient. 
+ * da interface IClient(stub). 
  * 
  * Para o servidor, a classe Client funciona
  * como o skeleton, já que faz os mesmos processos que a classe Server, que são:
@@ -50,7 +50,7 @@ public class Client extends UnicastRemoteObject implements IClient{
 	
 	public static void main(String[] args) {
 		try {
-			IServer s = (IServer) Naming.lookup("server");
+			IServer s = (IServer) Naming.lookup("server"); //o IServer, considerado como stub, é utilizado para fazer a chamada ao objeto remoto.
 			String message = "";
 			String id = "";
 			
