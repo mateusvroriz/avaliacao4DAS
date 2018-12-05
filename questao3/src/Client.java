@@ -8,6 +8,23 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+/*
+ * A classe é Cliente corresponde a possíveis clientes que
+ * farão uso do servidor de troca de mensagens. Ela foi
+ * implementada como objeto remoto pelos motivos explicados nos comentários
+ * da interface IClient. 
+ * 
+ * Para o servidor, a classe Client funciona
+ * como o skeleton, já que faz os mesmos processos que a classe Server, que são:
+ * 
+ * 1. Realizar o processo de unmarshalling dos parâmetros enviados pelo servidor
+ * (neste caso, não existem parâmetros).
+ * 2. Evocar a implementação real do método remoto show.
+ * 3. Realizar o processo de marshalling do resultado da evocação do método show 
+ * (neste caso, não há retorno).
+ * 4. Retornar o valor para o servidor.
+ * 
+ */
 public class Client extends UnicastRemoteObject implements IClient{
 
 	private String id = "";
